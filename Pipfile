@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 gpt-index = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
