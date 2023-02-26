@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 llama-index = "*"
 python-dotenv = "*"
+langchain = "*"
+pyvis = "*"
 
 [dev-packages]
 
