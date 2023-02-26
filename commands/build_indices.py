@@ -1,16 +1,10 @@
-from pathlib import Path
-from llama_index import SimpleDirectoryReader, GPTSimpleVectorIndex, download_loader, GPTTreeIndex
+from llama_index import SimpleDirectoryReader, GPTSimpleVectorIndex
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-documents = SimpleDirectoryReader('./data/xmls').load_data()
+documents = SimpleDirectoryReader('./data/sources').load_data()
 
-# PDFReader = download_loader("PDFReader")
+index = GPTSimpleVectorIndex(documents=documents)
 
-# loader = PDFReader()
-# documents = loader.load_data(file=Path('./data/pdfs/qrt.pdf'))
-
-index = GPTTreeIndex(documents)
-
-index.save_to_disk("./data/indices/qrt-xml-tree.json")
+index.save_to_disk("./data/indices/qrt-tex-vect.json")
